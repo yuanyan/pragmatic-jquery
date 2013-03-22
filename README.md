@@ -201,7 +201,7 @@ function thisIsMyFunction() {
 
 ### Why lowerCamelCase?
 
-We know that when you write Ruby or Python, you use under_scored method names and CamelCase class names. But JavaScript isn't Ruby or Python.
+We know that when you write Ruby or Python, you use under_scored method names and UpperCamelCase class names. But JavaScript isn't Ruby or Python.
 
 Consider:
 
@@ -224,7 +224,7 @@ var REMORT_PORT = "8080";
 ```
 
 ## Class Name
-   CamelCase
+   UpperCamelCase
 ```js
 var Greeter = Class.extend({
     name: null,
