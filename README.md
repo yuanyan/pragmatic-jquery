@@ -186,35 +186,35 @@ arr.forEach(function(val, key){
 ```
   
 ## Variable Name
-   camelCase
+   lowerCamelCase
 ```js
 var thisIsMyVal = "foo";
 ```
 
 ## Method Name
-   camelCase
+   lowerCamelCase
 ```js
 function thisIsMyFunction() {
     // balabala
 }
 ```
 
-### why camelCase?
+### Why lowerCamelCase?
 
 We know that when you write Ruby or Python, you use under_scored method names and CamelCase class names. But JavaScript isn't Ruby or Python.
 
 Consider:
 
-* In browsers, all methods are camelCase.
-* In node.js's standard library, all methods are camelCase.
-* In commonjs, all methods are camelCase.
-* In jQuery, all methods are camelCase.
-* In MooTools, all methods are camelCase.
-* In Prototype, all method are camelCase.
-* In YUI, all method are camelCase.
-* In JavaScript: The Good Parts, all methods are camelCase.
+* In browsers, all methods are lowerCamelCase.
+* In node.js's standard library, all methods are lowerCamelCase.
+* In commonjs, all methods are lowerCamelCase.
+* In jQuery, all methods are lowerCamelCase.
+* In MooTools, all methods are lowerCamelCase.
+* In Prototype, all method are lowerCamelCase.
+* In YUI, all method are lowerCamelCase.
+* In JavaScript: The Good Parts, all methods are lowerCamelCase.
 
-We not saying you must write JavaScript a certain way. Do what makes you the most comfortable, write code that is fun to write. But if you're trying to figure out what everyone else is doing, they're doing camelCase.
+We not saying you must write JavaScript a certain way. Do what makes you the most comfortable, write code that is fun to write. But if you're trying to figure out what everyone else is doing, they're doing lowerCamelCase.
 
 ## Constant   
     
@@ -247,7 +247,7 @@ var b = "beta";
 var c = "chi";
 ```
 
-### why?
+### Why?
 ```js
 var a = "alpha",
     b = "beta" // <-- note the forgotten comma
