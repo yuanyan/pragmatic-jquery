@@ -404,7 +404,7 @@ $('<a />')
   });
 
 // good
-$('</a>', {  
+$('<a/>', {  
     id : 'someId',  
     className : 'someClass',  
     href : 'somePath.html'  
