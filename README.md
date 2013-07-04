@@ -396,7 +396,7 @@ $(".btn").click(function(event){
 ## Element Create
 ```js
 // bad
-$('<a />')  
+$('<a/>')  
   .attr({  
     id : 'someId',  
     className : 'someClass',  
@@ -467,7 +467,7 @@ $.each (array, function (i, value) {
     console.log(i, value);  
 });
 
-// better (fast)
+// better (fast), use es5-shim(https://github.com/kriskowal/es5-shim) for legacy JavaScript engines
 array.forEach(function(value, i){
     console.log(i, value);
 });
