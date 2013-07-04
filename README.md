@@ -26,7 +26,7 @@ promise.js
 ```js
 // pluginName.js
 
-! (function (factory) {
+(function (factory) {
     if (typeof define === 'function') {
         define(['$'], factory);
     } else {
@@ -44,7 +44,7 @@ There are some kinds of jQuery plugins:
     ```js
     // pluginName.js
 
-    ! (function (factory) {
+    (function (factory) {
         if (typeof define === 'function') {
         ...
     })(function ($) {
@@ -62,7 +62,7 @@ There are some kinds of jQuery plugins:
     ```js
     // pluginName.js
 
-    ! (function (factory) {
+    (function (factory) {
         if (typeof define === 'function') {
         ...
     })(function ($) {
@@ -86,7 +86,7 @@ There are some kinds of jQuery plugins:
     ```js
     // pluginName.js
 
-    ! (function (factory) {
+    (function (factory) {
         if (typeof define === 'function') {
         ...
     })(function ($) {
@@ -102,7 +102,7 @@ There are some kinds of jQuery plugins:
     ```js
     // pluginName.js
 
-    ! (function (factory) {
+    (function (factory) {
         if (typeof define === 'function') {
         ...
     })(function ($) {
@@ -121,7 +121,7 @@ There are some kinds of jQuery plugins:
     ```js
     // pluginName.js
 
-    ! (function (factory) {
+    (function (factory) {
         if (typeof define === 'function') {
         ...
     })(function ($) {
@@ -162,7 +162,7 @@ There are some kinds of jQuery plugins:
     ```js
     // valHooks.js
 
-    ! (function (factory) {
+    (function (factory) {
         if (typeof define === 'function') {
         ...
     })(function ($) {
