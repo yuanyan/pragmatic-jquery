@@ -516,6 +516,80 @@ $.isArray(arr)
 $.isFunction(fn)
 ```
 
+## Ajax Retry
+```
+// not bad, inspried by http://zeroedandnoughted.com/defensive-ajax-and-ajax-retries-in-jquery/
+$.ajax({
+    url : 'path/to/url',
+    type : 'get',
+    data :  {name : 'value'},
+    dataType : 'json',
+    timeout : 25000,
+    tryCount : 0,
+    retryLimit : 3,
+    success : function(json) {
+        //do something
+    },
+    error : function(xhr, textStatus, errorThrown ) {
+        if ($.inArray(textStatus, ['timeout', 'abort', 'error']) > -1) {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+                return $.ajax(this);
+            }
+            return alert('Oops! There was a problem, please try again later.');
+        }
+    }
+});
+
+// better, inspried by https://github.com/mberkom/jQuery.retryAjax
+$.retryAjax = function (ajaxParams) {
+	var errorCallback;
+	ajaxParams.tryCount = ajaxParams.tryCount > 0 ? ajaxParams.tryCount : 0;
+	ajaxParams.retryLimit = ajaxParams.retryLimit > 0 : ajaxParams.retryLimit : 2;
+	// Custom flag for disabling some jQuery global Ajax event handlers for a request
+	ajaxParams.suppressErrors = true;
+	
+	if (ajaxParams.error) {
+	    errorCallback = ajaxParams.error;
+	    ajaxParams.error = null;
+	} else {
+	    errorCallback = $.noop;
+	}
+	
+	ajaxParams.complete = function (jqXHR, textStatus) {
+	    if ($.inArray(textStatus, ['timeout', 'abort', 'error']) > -1) {
+	        this.tryCount++;
+	        if (this.tryCount <= this.retryLimit) {
+	            // fire error handling on the last try
+	            if (this.tryCount === this.retryLimit) {
+	                this.error = errorCallback;
+	                this.suppressErrors = null;
+	            }
+	            //try again
+	            $.ajax(this);
+	            return true;
+	        }
+	
+	        alert('Oops! There was a problem, please try again later.');
+	        return true;
+	    }
+	};
+
+	$.ajax(ajaxParams);
+};
+
+$.retryAjax({
+	url : 'path/to/url',
+    type : 'get',
+    data :  {name : 'value'},
+    dataType : 'json',
+    timeout : 25000,
+    success : function(json) {
+        //do something
+    }
+})
+```
 
 ## Performance
   - Cache jQuery lookups
