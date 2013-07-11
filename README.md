@@ -349,7 +349,7 @@ $( "#members li a" ).click( function( e ) {} );
 ## Event Live 
 
 ```js
-// bad
+// bad, .live() deprecated jQuery 1.7, removed jQuery 1.9
 $( "#members li a" ).live( "click", function( e ) {} );
 
 // good
@@ -359,7 +359,7 @@ $( document ).on( "click", "#members li a", function( e ) {} );
 
 ## Event Delegate 
 ```js
-// bad
+// bad, as of jQuery 1.7, .delegate() has been superseded by the .on() method
 $( "#members" ).delegate( "li a", "click", function( e ) {} );
 
 // good
