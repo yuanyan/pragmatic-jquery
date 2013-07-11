@@ -639,7 +639,29 @@ $.retryAjax({
     // good (faster)
     $($sidebar[0]).find('ul');
     ```
+  - Use 'event delegation' with list of elements.
+    ```html
+	<ul>
+		<li>list1</li>
+		<li>list1</li>
+		<li>list1</li>
+		<li>list1</li>
+		<li>list1</li>
+	</ul>	
+    ```
+	
+	```js
+	// bad
+	$("ul li").on("click", function() {
+	    $(this).text("aha");
+	});
 
+	// good
+	$("ul").on("click", "li", function() {
+	    $(this).text("aha");
+	});
+	```
+	
 # Ref
 * jQuery Core Style Guide - http://docs.jquery.com/JQuery_Core_Style_Guidelines
 * Airbnb JavaScript Style Guide - https://github.com/airbnb/javascript
