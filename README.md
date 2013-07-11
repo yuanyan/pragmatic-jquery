@@ -639,14 +639,14 @@ $.retryAjax({
     // good (faster)
     $($sidebar[0]).find('ul');
     ```
-  - Use 'event delegation' with list of elements.
+  - Use `event delegation` with list of elements.
     ```html
 	<ul>
 		<li>list1</li>
-		<li>list1</li>
-		<li>list1</li>
-		<li>list1</li>
-		<li>list1</li>
+		<li>list2</li>
+		<li>list3</li>
+		<li>list4</li>
+		<li>list5</li>
 	</ul>	
     ```
 	
@@ -655,7 +655,7 @@ $.retryAjax({
 	$("ul li").on("click", function() {
 	    $(this).text("aha");
 	});
-
+	
 	// good
 	$("ul").on("click", "li", function() {
 	    $(this).text("aha");
