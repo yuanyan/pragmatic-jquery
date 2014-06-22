@@ -188,7 +188,10 @@ arr.forEach(function(val, key){
 ## Variable Name
    lowerCamelCase
 ```js
-var thisIsMyVal = "foo";
+var thisIsMyVal;
+var md5Encoder;
+var xmlReader;
+var httpServer;
 ```
 
 ## Method Name
@@ -197,6 +200,14 @@ var thisIsMyVal = "foo";
 function thisIsMyFunction() {
     // balabala
 }
+```
+
+```
+// Some special cases
+getMd5() instead of getMD5()
+getHtml() instead of getHTML()
+getJsonResponse() instead of getJSONResponse()
+parseXmlContent() instead of parseXMLContent()
 ```
 
 ### Why lowerCamelCase?
